@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 21, 2019 7:34:52 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="app.model.News" table="News" catalog="shopbee">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="categories" class="app.model.Category" fetch="select">
+            <column name="categoryId" not-null="true" />
+        </many-to-one>
+        <property name="postTitle" type="string">
+            <column name="postTitle" not-null="true" />
+        </property>
+        <property name="postContent" type="string">
+            <column name="postContent" length="65535" not-null="true" />
+        </property>
+        <property name="author" type="string">
+            <column name="author" length="100" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="65535" />
+        </property>
+        <property name="featureImg" type="string">
+            <column name="featureImg" length="65535" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="createDate" length="19" />
+        </property>
+        <property name="status" type="java.lang.Boolean">
+            <column name="status" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 22, 2019 1:54:45 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="app.model.OrderDetail" table="OrderDetails" catalog="shopbee">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="products" class="app.model.Product" fetch="select">
+            <column name="productId" not-null="true" />
+        </many-to-one>
+        <many-to-one name="orders" class="app.model.Order" fetch="select">
+            <column name="orderId" not-null="true" />
+        </many-to-one>
+        <property name="quantity" type="int">
+            <column name="quantity" not-null="true" />
+        </property>
+        <property name="price" type="java.lang.Float">
+            <column name="price" precision="12" scale="0" />
+        </property>
+        <property name="status" type="java.lang.Boolean">
+            <column name="status" />
+        </property>
+    </class>
+</hibernate-mapping>

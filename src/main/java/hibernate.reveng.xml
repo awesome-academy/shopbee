@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="shopbee" match-name="Categories"/>
+  <table-filter match-catalog="shopbee" match-name="Customers"/>
+  <table-filter match-catalog="shopbee" match-name="News"/>
+  <table-filter match-catalog="shopbee" match-name="OrderDetails"/>
+  <table-filter match-catalog="shopbee" match-name="Orders"/>
+  <table-filter match-catalog="shopbee" match-name="Products"/>
+  <table-filter match-catalog="shopbee" match-name="Sliders"/>
+  <table-filter match-catalog="shopbee" match-name="Users"/>
+</hibernate-reverse-engineering>
