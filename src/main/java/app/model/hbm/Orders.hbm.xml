@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 21, 2019 7:34:52 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="app.model.Order" table="Orders" catalog="shopbee">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customers" class="app.model.Customer" fetch="select">
+            <column name="customerId" not-null="true" />
+        </many-to-one>
+        <many-to-one name="users" class="app.model.User" fetch="select">
+            <column name="userId" not-null="true" />
+        </many-to-one>
+        <property name="address" type="string">
+            <column name="address" length="65535" />
+        </property>
+        <property name="total" type="java.lang.Float">
+            <column name="total" precision="12" scale="0" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="createDate" length="19" />
+        </property>
+        <property name="status" type="java.lang.Boolean">
+            <column name="status" />
+        </property>
+        <list name = "orderDetails" fetch="select" inverse="true">
+         	<key column = "orderId" not-null="true"/>
+         	<list-index column = "id"/>
+        	<one-to-many class="app.model.OrderDetail"/>
+      	</list>
+    </class>
+</hibernate-mapping>
